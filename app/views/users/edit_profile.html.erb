@@ -1,0 +1,63 @@
+
+<div style="margin:5% 0 0 25%;">
+  <%=form_for @user,:url => update_profile_path, method: :post do |f|%>
+<table><tr>
+  <td>
+First Name: 
+    </td><td><%= f.text_field :first_name%>
+</td>
+</tr>
+<br/>
+<tr>
+  <td>
+Last Name: 
+    </td><td><%= f.text_field :last_name%>
+</td>
+</tr>
+<tr>
+  <td>
+Email: 
+  </td><td><%= @user.email%>
+</td>
+</tr>
+<tr>  
+  <td><br/>
+Details : <br/>
+    </td>
+</tr>
+<tr>
+  <td>
+Address: 
+  </td><td><%= f.text_field :Adress%>
+</td>
+</tr>
+<tr>
+  <td>
+City: 
+  </td><td><%= f.text_field :City%>
+</td>
+</tr>
+  
+<tr>
+  <td>
+State: 
+  </td><td><%= f.text_field :State%>
+</td>
+</tr>
+
+<tr>
+  <td>
+Zip Code: 
+  </td><td><%= f.text_field :zip_code%>
+</td>
+</tr>  
+<tr>
+  <td>
+Phone: 
+  </td><td><%= f.text_field :phone%>
+</td>
+</tr>
+  
+</table>
+  <%=f.submit "Update Profile"%>
+<% end %>

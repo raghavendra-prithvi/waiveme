@@ -1,0 +1,41 @@
+<style type="text/css">
+html body div #menu, html body div #menu a {background-color: transparent; font-family: Georgia; color: #212e36;}
+
+body {background-color: #d8f0f4; background-image: url(http://i.imgur.com/bFQ6V.png);}
+
+#container {width: 500px; margin: 25px;}
+
+#two, #three, #four {background-color: #fff; padding: 8px; font-family: tahoma; color: #212e36; font-size: 11px;}
+#two, #three {width: 250px; text-align: center;}
+#four {text-align: justify;}
+
+a {color: #3f7464;}
+
+.head {font-family: Georgia; color: #192e28; font-size: 20px; text-align: center;}
+#one .head {font-size: 50px;}
+
+b {color: #50193E;}
+</style>
+
+<div style="width:50%;margin-left:25%;">
+<tr>
+<td id="two">
+<div class="head">Profile</div>
+  <span>First Name :  <%= @user.first_name %></span><br/>
+  <span>Last Name :   <%= @user.last_name %></span><br/>
+<span>Email: <%=@user.email %> </span><br/>
+<span></span><br>
+</td>
+<td id="three">
+<div class=""><u><b>Details</b></u></div>
+  <span>Address :  <%= @user.Adress %></span><br/>
+   <span>City :  <%= @user.City %></span><br/>
+  <span>State :  <%= @user.State %></span><br/>
+  <span>ZIP Code :  <%= @user.zip_code %></span><br/>
+  <span>Phone :  <%= @user.phone %></span><br/>
+</td>
+</tr>
+ 
+  
+<div class="head"> <b><a href="/edit_profile" > Edit Profile</a></b></div>
+</div>

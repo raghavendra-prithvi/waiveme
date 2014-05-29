@@ -1,0 +1,13 @@
+<h1> Welcome to Waive ME </h1>
+
+<h3> People who are using this app </h3>
+<div>
+<ul>
+<%@users = User.all%>
+<% @users.each do |u| %>
+    <li>
+      <%=u.email %>
+    </li>
+<% end %>
+  </ul>
+</div>
