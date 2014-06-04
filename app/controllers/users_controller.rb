@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   end
   
   def profile_data
-      @user = User.find(session[:user_id])
+    @user = User.find_by_email(params[:email])
       resp_hash = {}
       respond_to do |format|              
         resp_hash[:status] = "Success"
