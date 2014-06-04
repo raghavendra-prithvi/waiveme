@@ -46,6 +46,15 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])    
   end
   
+  def profile_data
+      @user = User.find(session[:user_id])
+      resp_hash = {}
+      respond_to do |format|              
+        resp_hash[:status] = "Success"
+        resp_hash[:data] = @user
+        format.json { render :json => resp_hash.to_json }
+     end
+  end
   
   def update_profile
     @user = User.find(session[:user_id])
@@ -58,10 +67,9 @@ class UsersController < ApplicationController
     @user.phone = params[:user][:phone]
     @user.save
     redirect_to :action => "display_profile"
-        
   end
   
   def edit_profile
     @user = User.find(session[:user_id])
-  end
+  end  
 end
