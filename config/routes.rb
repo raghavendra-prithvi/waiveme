@@ -5,7 +5,7 @@ Waiveme::Application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"
   post "signup" => "users#signup"
   get "profile" => "users#display_profile"
-  get "profile_data" => "users#profile_data"
+  post "profile_data" => "users#profile_data"
   post "update_profile" => "users#update_profile"
   get "edit_profile" => "users#edit_profile"
   #root :to => "users#new"
