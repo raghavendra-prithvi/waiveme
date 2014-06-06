@@ -74,10 +74,10 @@ class UsersController < ApplicationController
     resp_hash = {}
     @user.first_name = params[:firstName]
     @user.last_name = params[:lastName]
-    @user.Adress = params[:city]
-    @user.City = params[:state]
-    @user.State = params[:zip_code]
-    @user.zip_code = params[:address]
+    @user.Adress = params[:address]
+    @user.City = params[:city]
+    @user.State = params[:state]
+    @user.zip_code = params[:zip_code]
     @user.phone = params[:phone]
     @user.save
     
