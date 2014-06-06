@@ -7,6 +7,7 @@ Waiveme::Application.routes.draw do
   get "profile" => "users#display_profile"
   post "profile_data" => "users#profile_data"
   post "update_profile" => "users#update_profile"
+  post "update_profile_data" => "users#update_profile_data"
   get "edit_profile" => "users#edit_profile"
   #root :to => "users#new"
   resources :users
