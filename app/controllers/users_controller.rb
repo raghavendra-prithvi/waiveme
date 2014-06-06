@@ -69,6 +69,25 @@ class UsersController < ApplicationController
     redirect_to :action => "display_profile"
   end
   
+  def update_profile_data
+    @user = User.find_by_email(params[:email])
+    resp_hash = {}
+    @user.first_name = params[:firstName]
+    @user.last_name = params[:lastName]
+    @user.Adress = params[:city]
+    @user.City = params[:state]
+    @user.State = params[:zip_code]
+    @user.zip_code = params[:address]
+    @user.phone = params[:phone]
+    @user.save
+    
+    respond_to do |format|              
+      resp_hash[:status] = "Success"
+      resp_hash[:data] = @user
+      format.json { render :json => resp_hash.to_json }
+    end
+  end
+  
   def edit_profile
     @user = User.find(session[:user_id])
   end  
