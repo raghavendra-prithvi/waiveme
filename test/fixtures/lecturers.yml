@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  department_id: 1
+  available_hrs: MyString
+  status: MyText
+
+two:
+  name: MyString
+  department_id: 1
+  available_hrs: MyString
+  status: MyText
