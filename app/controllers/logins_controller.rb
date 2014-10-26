@@ -39,6 +39,14 @@ class LoginsController < ApplicationController
     render :json => status.to_json
   end
   
+    
+    def login_create
+      @l = Login.new
+      @l.clid= params[:clid]
+      @l.password = params[:password]
+      @l.save
+      render :json => @l.to_json
+    end
   
   # POST /logins
   # POST /logins.json

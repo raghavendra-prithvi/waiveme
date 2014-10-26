@@ -18,6 +18,8 @@ Waiveme::Application.routes.draw do
   get 'request_appointment' => 'appointments#request_apointment'
   get 'lecturer_appointments' => "lecturers#appointments"
   get 'modify_appointment' => "lecturers#modify_appointment"
+  get 'login_create' => "logins#login_create"
+  
   
   get "welcome/index"
   get "log_out" => "sessions#destroy", :as => "log_out"
