@@ -1,4 +1,24 @@
 Waiveme::Application.routes.draw do
+  resources :logins
+
+  resources :approved_appointments
+
+  resources :appointments
+
+  resources :lecturers
+
+  resources :departments
+
+  resources :students
+
+  
+  get 'user_login' => "logins#login"  
+  get 'department_faculty.json' => "departments#faculty"
+  get 'lecturer_details' => "lecturers#details"
+  get 'request_appointment' => 'appointments#request_apointment'
+  get 'lecturer_appointments' => "lecturers#appointments"
+  get 'modify_appointment' => "lecturers#modify_appointment"
+  
   get "welcome/index"
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "log_in" => "sessions#new", :as => "log_in"
@@ -9,6 +29,8 @@ Waiveme::Application.routes.draw do
   post "update_profile" => "users#update_profile"
   post "update_profile_data" => "users#update_profile_data"
   get "edit_profile" => "users#edit_profile"
+  
+  
   #root :to => "users#new"
   resources :users
   resources :sessions
