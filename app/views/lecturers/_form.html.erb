@@ -21,7 +21,8 @@
   </div>
   <div class="field">
     <%= f.label :department_id %><br>
-    <%= f.number_field :department_id %>
+    <%=f.select 'department_id', options_from_collection_for_select(@departments, 'id', 'name')%>
+    <%#= f.number_field :department_id %>
   </div>
   <div class="field">
     <%= f.label :available_hrs %><br>
