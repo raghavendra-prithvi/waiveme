@@ -29,16 +29,29 @@ class AppointmentsController < ApplicationController
     @ap.appointment_time = params[:appointment_time]
     @ap.appointment_date = params[:appointment_date]
     @ap.note = params[:note]
-    status = {}
-    
+    status = {}    
     if @ap.save!
       status["success"] = "created successfully" 
     end
-    render :json => status.to_json
-      
-    
+    render :json => status.to_json      
   end
   
+  
+  def request_appointment_clid
+      @ap = Appointment.new
+      @s = Student.where(:clid=> params[:student_id]).first          
+      @lecturer  = Lecturer.where(:clid => params[:lecturer_clid]).first
+      @ap.student_id = @s.id    
+      @ap.lecturer_id = @lecturer.id #params[:lecturer_id]
+      @ap.appointment_time = params[:appointment_time]
+      @ap.appointment_date = params[:appointment_date]
+      @ap.note = params[:note]
+      status = {}    
+      if @ap.save!
+        status["success"] = "created successfully" 
+      end
+      render :json => status.to_json      
+  end  
   
   
   

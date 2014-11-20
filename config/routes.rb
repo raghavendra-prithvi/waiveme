@@ -15,7 +15,9 @@ Waiveme::Application.routes.draw do
   get 'user_login' => "logins#login"  
   get 'department_faculty.json' => "departments#faculty"
   get 'lecturer_details' => "lecturers#details"
+  get 'lecturer_details_clid' => "lecturers#details_clid"
   get 'request_appointment' => 'appointments#request_apointment'
+  get 'request_appointment_clid' => 'appointments#request_appointment_clid'  
   get 'lecturer_appointments' => "lecturers#appointments"
   get 'modify_appointment' => "lecturers#modify_appointment"
   get 'login_create' => "logins#login_create"

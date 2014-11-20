@@ -43,11 +43,19 @@ class LecturersController < ApplicationController
       end
     end
   end
-
   
   def details
     @l = Lecturer.find(params[:lecturer_id])
     render :json => @l.to_json    
+  end
+  
+  def details_clid
+    @l = Lecturer.where(:clid =>params[:clid]).first
+    if !@l.nil?
+      render :json => @l.to_json  
+    else
+      render :text => "there is no lecturer with this clid"
+    end
   end
   
   def appointments
