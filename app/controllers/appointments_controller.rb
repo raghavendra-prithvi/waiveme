@@ -4,7 +4,18 @@ class AppointmentsController < ApplicationController
   # GET /appointments
   # GET /appointments.json
   def index
-    @appointments = Appointment.all
+    @appointments = []
+    if !params[:clid].nil?
+      @lecturer = Lecturer.where(:clid => params[:clid]).first
+      @appointments = Appointment.where(:lecturer_id => @lecturer.id)   if !@lecturer.nil?        
+    else      
+      @appointments = Appointment.all
+    end
+    @appointments.each do |ap|
+        s = Student.find(ap.student_id)
+        ap.student_clid = s.clid
+        ap.save
+    end
   end
 
   # GET /appointments/1

@@ -70,6 +70,13 @@ class StudentsController < ApplicationController
     end
   end
 
+  def appointments
+    @student = Student.where(:clid => params[:clid]).first
+    @appointments = Appointment.where(:student_id => @student.id)
+    render :json => @appointments.to_json
+  end
+  
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student

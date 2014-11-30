@@ -21,6 +21,7 @@ Waiveme::Application.routes.draw do
   get 'lecturer_appointments' => "lecturers#appointments"
   get 'modify_appointment' => "lecturers#modify_appointment"
   get 'login_create' => "logins#login_create"
+  get '/student_appointment' => "students#appointments"
   
   
   get "welcome/index"
