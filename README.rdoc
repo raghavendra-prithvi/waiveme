@@ -1,28 +1,49 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Main Website
+http://waive-me-staging.herokuapp.com
 
-Things you may want to cover:
+Create Login  by admin
+/login_create?clid=rrs4291&password=abcdef
 
-* Ruby version
+Ex: http://waive-me-staging.herokuapp.com/login_create?clid=rrs4291&password=abcdef
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+you can check them by going to 
+http://waive-me-staging.herokuapp.com/logins
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+For a use to login
+/user_login.json?clid=rxr8118&password=ravikiran
+
+to get the Lost of departments
+/departments.json
+
+Get Lecturers list under a department
+/department_faculty.json?department_id=1
+
+get lecturer details
+/lecturer_details.json?lecturer_id=1
+
+Student request an appointment after login
+/request_appointment.json?student_id=rxr8118&lecturer_id=1&appointment_time=10am&appointment_date=11-02-2014&note=project%20update
+
+
+List of all appointments
+/appointments.json
+
+
+List of appointments for a particular lecturer
+/lecturer_appointments.json?clid=wxh9991
+
+
+Lecturer update an appointment 
+/modify_appointment.json?appointment_id=2&note=i%20will%20update%20tomorrow&approved=true
+
+
+
+DB SCHEMA:
+Appointments
+	Lecturer_id
+	Appointment Time
+	Appointment Date
+	Note
